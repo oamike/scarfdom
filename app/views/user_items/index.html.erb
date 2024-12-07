@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<table class="header-table">
+  <tr><td>
+    <h1><%= link_to "Scarfdom", root_path %></h1>
+  </td>
+  <td></td>
+  <td class="header-button"><%= button_to 'Own', 'user_items', params: {collection: :own}, method: :get, class: "button_to#{" selected" if @collection == :own_count}" %></td>
+  <td class="header-button"><%= button_to 'Want', 'user_items', params: {collection: :want}, method: :get, class: "button_to#{" selected" if @collection == :want}" %></td>
+  <td class="header-button"><%= button_to 'Trade', 'user_items', params: {collection: :trade}, method: :get, class: "button_to#{" selected" if @collection == :willtrade}" %></td>
+  <td><%= @user.username %> collection </td>
+</table>
+
+<p></p>
+<hr/>
+<table>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <table>
+          <tr>
+            <td>
+              <table>
+                <tr><td>
+                  <%= link_to item.name, item, {class: "scarf-name"}   %>
+                </td>
+                <td>
+                  <%= render partial: "user_item", locals: { user_data: item.user_data } %>
+                </td>
+              </tr>
+              </table>
+          <tr>
+            <td>
+              <p><%= image_render(item.images[0]&.image_url) %></p>
+              <p><%= image_render(item.images[1]&.image_url) %></p>
+            </td>
+          </tr>
+      </table>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<br>

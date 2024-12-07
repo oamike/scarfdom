@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= link_to "Scarfdom", root_path %></h1>
+<table class="header-table">
+  <tr><td>
+    <h1><%= link_to "Scarfdom", root_path %></h1>
+  </td>
+  <td>
+    <%= @user.username %><br>
+    <%= link_to 'My Scarves', user_items_path %>
+  </td>
+<td></td></tr>
+</table>
 <%= paginate @items, window: 2 %>        <%= page_entries_info @items, entry_name: 'scarf' %>
 <p></p>
 <hr/>

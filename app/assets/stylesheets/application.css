@@ -13,5 +13,16 @@
  *= require_tree .
  *= require_self
  */
-
- 
+ .header-table {
+   width: 100%;
+ }
+ .header-button {
+   width: 50px;
+   text-align: center;
+ }
+.button_to {
+  .selected {
+    color: White;
+    background-color: #7f7fdd;
+  }
+}

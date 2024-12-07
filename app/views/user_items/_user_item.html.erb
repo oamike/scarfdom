@@ -1,0 +1,19 @@
+
+
+  <ul class="notification-badges" >
+    <% if user_data %>
+      <% if user_data.own_count > 0 %>
+        <li class="on" data-badge=<%= user_data.own_count %>>own</li>
+      <% else %>
+        <li class="off">own</li>
+      <% end %>
+      <li class="<%= user_data.willtrade ? 'on' : 'off' %>" >trade</li>
+      <li class="<%= user_data.want ? 'on' : 'off' %>" >want</li>
+      <li class="<%= user_data.hidden  ? 'on' : 'off' %>" >hidden</li>
+    <% else %>
+      <li class="off" >own</li>
+      <li class="off">trade</li>
+      <li class="off">want</li>
+      <li class="off">hide</li>
+    <% end %>
+  </ul>

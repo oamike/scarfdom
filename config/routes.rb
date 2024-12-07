@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :items
   resources :images
 
-  resources :user_items, only: [:show, :create, :update]
+  resources :user_items, only: [:index, :show, :create, :update]
 
   root 'items#index'
 end

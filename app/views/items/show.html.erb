@@ -14,7 +14,9 @@
       <%= render partial: "user_item", locals: { user_data: @item.user_data } %>
     </td>
     <td>
+      <% if @user.role != "user" %>
       <%= link_to 'Edit', edit_item_path(@item), {class: "edit-button"} %>
+      <% end %>
     </td>
   </tr>
   </tbody>
